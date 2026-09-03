@@ -6,8 +6,8 @@
 	"author": {
 		"name": "Alen Peršić"
 	},
-	"homepage": "https://github.com/cursor/plugins/tree/main/pstack",
-	"repository": "https://github.com/cursor/plugins",
+	"homepage": "https://github.com/apersic/guide-to-the-code",
+	"repository": "https://github.com/apersic/guide-to-the-code",
 	"license": "MIT",
 	"keywords": [
 		"pstack",
