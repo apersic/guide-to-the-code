@@ -76,6 +76,14 @@ You rarely need more words. You need the right name, and [the principles page](.
 
 That's the whole prompt. [`/bro`](../../skills/bro/SKILL.md) restates the last message like one human talking to another, no jargon, shorter. Use it when a reply is technically thorough and you still don't know what it said.
 
+## Design a UI that does not look templated
+
+```text
+/nax-mode design a landing page for this product. not generic AI slop. screenshot the result.
+```
+
+That matches the [Design playbook](../../skills/nax-mode/playbooks/design.md). Name the surface (landing vs dashboard) and ask for screenshots. A named style word loads one catalog slug. Pixel matching two implementations is still visual parity. A throwaway layout sketch is still a prototype. More prompts live in [Design the change](./04-design.md).
+
 ## The pitfalls
 
 - **Enumerating skills in the prompt.** "use /how then /architect then /arena" reorders steps the playbook already sequences. State the goal and constraints. Name a skill only to override a default.
@@ -85,6 +93,7 @@ That's the whole prompt. [`/bro`](../../skills/bro/SKILL.md) restates the last m
 - **Accepting every review comment.** Bots and humans both file real catches and noise in one list. `/interrogate` sorts findings into act-on and dismissed buckets with reasons, and you can override either way.
 - **Treating `auto` as a model slug.** `auto` and `inherit-parent` mean "omit the model field so the subagent inherits the parent chat model." [Setup](./01-setup.md) covers the roles.
 - **Reporting success off a green build.** A build proves it compiles. Ask for the real command, flow, stored value, or profile, and expect the evidence in the reply.
+- **Expecting a PR without asking.** Build playbooks present the work and stop. Say "open the pr" when you want the Opening a PR playbook. `/automate-me` and a `changed` `/maintain-verification-skill` pass still open a PR on their own.
 - **Writing a `SKILL.md` freehand.** Route it through the [Authoring or modifying a skill playbook](../../skills/nax-mode/playbooks/authoring-a-skill.md) so validation and review happen.
 
 That's the guide. If you skipped ahead, go back to [setup](./01-setup.md) and run one real task. The habits stick from use, not from reading.

@@ -48,7 +48,7 @@ In context, that's enough. [`/tdd`](../../skills/tdd/SKILL.md) writes the smalle
 
 ## Clean before you commit
 
-The [Opening a PR playbook](../../skills/nax-mode/playbooks/opening-a-pr.md) runs [`/deslop`](../../skills/deslop/SKILL.md) on the diff before each commit and applies [`/unslop`](../../skills/unslop/SKILL.md) to the PR description and commit bodies. `/deslop` strips narrating comments, unsupported guards, dead compatibility paths, and unrelated edits from the code change.
+Cleanup is not optional polish, and it is not a commit. Run it on the diff you will hand over. The [Opening a PR playbook](../../skills/nax-mode/playbooks/opening-a-pr.md) runs [`/deslop`](../../skills/deslop/SKILL.md) on the diff before each commit, but only after you ask to commit or open a PR. Other playbooks present the work and stop. `/deslop` strips narrating comments, unsupported guards, dead compatibility paths, and unrelated edits from the code change.
 
 For prose, `/unslop` takes a target and any extra rules you have:
 

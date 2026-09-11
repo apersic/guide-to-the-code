@@ -1,8 +1,8 @@
 {
 	"name": "guide-to-the-code",
 	"displayName": "guide-to-the-code",
-	"version": "0.1.0",
-	"description": "Fork of pstack by Lauren Tan. Modified for personal use. Continuously changing.",
+	"version": "0.2.0",
+	"description": "Fork of pstack by Lauren Tan. Design playbook uses Taste Skill (Leonxlnx), Vercel Web Interface Guidelines, and Awesome Design Skills (Bergside). Modified for personal use.",
 	"author": {
 		"name": "Alen Peršić"
 	},
@@ -16,13 +16,18 @@
 		"principles",
 		"agent-style",
 		"subagents",
-		"unslop"
+		"unslop",
+		"design",
+		"taste-skill"
 	],
 	"category": "developer-tools",
 	"tags": [
 		"workflow",
 		"principles",
 		"review",
-		"planning"
-	]
+		"planning",
+		"design"
+	],
+	"skills": "./skills/",
+	"agents": "./agents/"
 }

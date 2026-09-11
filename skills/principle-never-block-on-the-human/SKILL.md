@@ -19,5 +19,6 @@ The human supervises asynchronously. Agents must stay unblocked: make reasonable
 
 **Boundaries:**
 - **Irreversible actions** (force-push, delete production data, send external messages) still require confirmation.
+- **Commits and PRs** wait unless the user asked to commit, open a PR, babysit, ship, or run autopilot, or the matched skill is `/automate-me` or a `changed` `/maintain-verification-skill` pass.
 - **Reversible actions** (write code, edit notes, split tasks) should proceed without blocking.
 - **Product direction** comes from the human; *execution* should not block.
