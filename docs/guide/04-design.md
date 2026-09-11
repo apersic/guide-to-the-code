@@ -2,6 +2,61 @@
 
 One attempt at a hard design locks in the first shape the model thought of. `/architect` settles types and boundaries before implementation. `/arena` runs several attempts at the same brief and merges the best parts. `/interrogate` has other models try to break the result. When the job is coverage rather than design synthesis, `/swarm` fans out slices or races and aggregates their results.
 
+When the job is how the UI looks, `/nax-mode` matches the [Design playbook](../../skills/nax-mode/playbooks/design.md). That is a different kind of design. Architect settles types. The Design playbook settles visual language.
+
+## Design a UI with the Design playbook
+
+There is no separate `/design` slash command. Start with `/nax-mode` and talk about the page. The playbook matches phrases like "design this page", "redesign this", "build this screenshot", "make it neobrutalist", or "not generic AI slop".
+
+Name the **surface** in the prompt. Marketing pages (landing, portfolio, editorial, product marketing) load `design-taste-frontend`. Product UI (dashboard, table, settings, multi-step flow) does not. If you skip the surface, the agent has to guess, and taste-skill on a dashboard is the usual miss.
+
+Name the **kind** when you know it. Skip it when you don't. The playbook classifies from the rest of the prompt.
+
+| Kind | Say this | What fires |
+|---|---|---|
+| `greenfield` | "design a landing page for this product" | taste-skill on marketing, guidelines as the spec on product UI |
+| `redesign` | "redesign this page, keep the copy and the conversion path" | audit first, then the same skills as greenfield |
+| `image-match` | attach a screenshot, then "build this" | `image-to-code`. Behavior on product UI still follows guidelines |
+| `named-style` | "make it editorial" or "neobrutalist" | one catalog slug from a pinned Awesome Design Skills commit |
+
+A request can carry two kinds. "redesign this landing page, make it editorial" runs both rows.
+
+Ask for screenshots in the same prompt. The playbook already verifies at narrow, laptop, and wide. Saying "screenshot the result" makes that the finish condition you will look at.
+
+### Prompts that work
+
+```text
+/nax-mode design a landing page for this product. not generic AI slop. screenshot the result.
+```
+
+```text
+/nax-mode redesign this marketing page. keep the headline, the pricing, and the signup path. screenshot desktop and mobile.
+```
+
+```text
+/nax-mode build this screenshot into the marketing site. match layout and type. screenshot the result.
+```
+
+```text
+/nax-mode make this landing page neobrutalist. if two catalog slugs fit, prototype both.
+```
+
+```text
+/nax-mode restyle this settings table. follow web-design-guidelines. screenshot empty, loaded, and error.
+```
+
+The last one is product UI. Taste-skill stays off. Guidelines own behavior. A named style, if you add one, is surface treatment only.
+
+### What not to use it for
+
+- Pixel-exact matching of two implementations is [Visual parity](../../skills/nax-mode/playbooks/visual-parity.md).
+- A throwaway layout sketch to decide something is [Prototype](../../skills/nax-mode/playbooks/prototype.md).
+- Types, module boundaries, and caller usage are [`/architect`](../../skills/architect/SKILL.md). That is a different kind of design.
+
+The Design playbook presents the work. It does not commit or open a PR unless you ask.
+
+Source skills: [design-taste-frontend](../../skills/design-taste-frontend/SKILL.md) from [Taste Skill](https://github.com/Leonxlnx/taste-skill), [image-to-code](../../skills/image-to-code/SKILL.md), [web-design-guidelines](../../skills/web-design-guidelines/SKILL.md) from [Vercel](https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines), and [design-style-catalog](../../skills/design-style-catalog/SKILL.md) from a pinned [Awesome Design Skills](https://github.com/bergside/awesome-design-skills) commit.
+
 ## Settle the shape with `/architect`
 
 ```text

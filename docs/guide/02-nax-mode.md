@@ -1,6 +1,6 @@
 # Route work through `/nax-mode`
 
-`/nax-mode` is the front door. You give it a goal, it matches one of twenty-two playbooks, copies that playbook's steps into the todo list, and calls the other skills as the steps need them. In this page you learn what a good prompt looks like, and how little of one you actually need.
+`/nax-mode` is the front door. You give it a goal, it matches one of twenty-three playbooks, copies that playbook's steps into the todo list, and calls the other skills as the steps need them. In this page you learn what a good prompt looks like, and how little of one you actually need.
 
 ## What happens to your prompt
 
@@ -23,7 +23,7 @@ flowchart TD
     J --> K
 ```
 
-The diagram shows the common routes. There are also playbooks for hillclimbing a metric, diagnosing runtime symptoms and captured traces, prototypes, visual parity, authoring and evaluating skills, autonomous runs, babysitting a PR or stack to merge-ready, shipping a verified stack, running a PR queue on autopilot, orchestrating project-scale programs, session pickup, pausing safely, multi-phase plans, and worktree cleanup. The [playbook directory](../../skills/nax-mode/playbooks/) has the full set.
+The diagram shows the common routes. There are also playbooks for hillclimbing a metric, diagnosing runtime symptoms and captured traces, prototypes, visual parity, design, authoring and evaluating skills, autonomous runs, babysitting a PR or stack to merge-ready, shipping a verified stack, running a PR queue on autopilot, orchestrating project-scale programs, session pickup, pausing safely, multi-phase plans, and worktree cleanup. The [playbook directory](../../skills/nax-mode/playbooks/) has the full set.
 
 ## Say the goal, not the ceremony
 
@@ -69,7 +69,7 @@ If you run several agents against one repository, they will fight over the worki
 /nax-mode new task. branch off <base> in a fresh worktree, then port the parser change there.
 ```
 
-Each task in its own branch and worktree means no agent stomps another's files. The [Opening a PR playbook](../../skills/nax-mode/playbooks/opening-a-pr.md) already works from a worktree for code changes, so mostly you only say this when a specific base or location matters.
+Each task in its own branch and worktree means no agent stomps another's files. Say this when a specific base or location matters. The [Opening a PR playbook](../../skills/nax-mode/playbooks/opening-a-pr.md) also works from a worktree, but only when you ask to commit or open a PR.
 
 Worktrees accumulate. When disk gets tight, ask:
 
